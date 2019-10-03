@@ -1,4 +1,4 @@
-.yt__hero_section {
+.yt__header_section {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -7,38 +7,7 @@
   overflow: hidden;
   position: relative;
 
-  .yt__hero_navigation {
-    align-items: center;
-    /*
-    background: #000;
-    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
-    */
-    display: flex;
-    height: 70px;
-    justify-content: center;
-    left: 0;
-    padding: 0 1.5rem;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-
-    nav {
-      align-items: center;
-      display: flex;
-      justify-content: center;
-      width: 100%;
-
-      h1 {
-        font: italic 1.3rem "IBM Plex Sans", sans-serif;
-        font-weight: 600;
-        margin-left: 5px;
-      }
-    }
-  }
-
-  .yt__hero_container {
+  .yt__header_hero {
     box-sizing: border-box;
     display: block;
     height: 70vmax;
@@ -47,13 +16,13 @@
     width: 100%;
 
     &:after {
-      background-image: linear-gradient(180deg, transparent, #7e60fa 300px);
+      background-image: linear-gradient(180deg, transparent, #324a40 300px);
       content: "";
       height: 95vmax;
       left: 0;
       position: absolute;
       right: 0;
-      top: calc(50vmax - 300px);
+      top: calc(70vmax - 300px);
     }
 
     .yt__hero_image {
@@ -101,6 +70,37 @@
       }
     }
   }
+
+  .yt__header_navigation {
+    align-items: center;
+    /*
+    background: #000;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+    */
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    left: 0;
+    padding: 0 1.5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    nav {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      h1 {
+        font: italic 1.3rem "IBM Plex Sans", sans-serif;
+        font-weight: 600;
+        margin-left: 5px;
+      }
+    }
+  }
 }
 
 @keyframes header__animation {
@@ -130,13 +130,13 @@
 }
 
 @media (min-width: 768px) {
-  .yt__hero_section {
-    .yt__hero_container {
+  .yt__header_section {
+    .yt__header_hero {
       &:after {
         display: none;
       }
     }
-    .yt__hero_navigation {
+    .yt__header_navigation {
       nav {
         justify-content: flex-start;
       }
