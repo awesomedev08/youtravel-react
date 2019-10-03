@@ -1,0 +1,22 @@
+@import "../animations/_animations";
+@import "../util/_colors";
+
+button {
+  animation: reveal__animation;
+  background-color: $color-yellow;
+  border: 0;
+  border-radius: 4px;
+  color: $color-indigo;
+  cursor: pointer;
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.125em;
+  outline: none;
+  padding: 1rem 1.25rem;
+  text-shadow: 1px 1px $color-white;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}

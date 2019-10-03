@@ -1,0 +1,25 @@
+@keyframes reveal__animation {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+@keyframes hero__2_animation {
+  0%  { opacity: 0; transform: translate3d(5vmax, 2vmax, 0) scale(1.1) }
+  5%  { opacity: 1 }
+  33% { opacity: 1 }
+  38% { opacity: 0; transform: translate3d(0, -2vmax, 0) scale(1) }
+}
+
+@keyframes hero__3_animation {
+  0%  { opacity: 0; transform: translate3d(-2vmax, 0, 0) scale(1) }
+  5%  { opacity: 1 }
+  33% { opacity: 1 }
+  38% { opacity: 0; transform: translate3d(2vmax, -2vmax, 0) scale(1.1) }
+}
+
+@keyframes hero__1_animation {
+  0%  { opacity: 0; transform: translate3d(0, 2vmax, 0) scale(1) }
+  5%  { opacity: 1 }
+  33% { opacity: 1 }
+  38% { opacity: 0; transform: translateY(-2vmax) scale(1.1) }
+}

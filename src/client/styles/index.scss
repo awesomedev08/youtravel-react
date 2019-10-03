@@ -1,10 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Emblema+One&display=swap&text=N");
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:200i,400,600i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,500,600,700&display=swap");
 
-@import "_resets";
-@import "_footer";
-@import "_header";
-@import "_main";
+@import "util/_resets";
+@import "util/_util";
+
+@import "components/_button";
+@import "components/_input";
+
+@import "layout/_footer";
+@import "layout/_header";
+@import "layout/_main";
+
 
 * {
   margin: 0;
@@ -14,6 +20,7 @@
 body {
   background: #fff;
   display: grid;
+  font-family: 'Source Sans Pro', sans-serif;;
   grid-template-areas: "header" "main" "footer";
   grid-template-columns: 100%;
   grid-template-rows: 70vmax 1fr 50px;

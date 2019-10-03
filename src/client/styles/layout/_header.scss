@@ -1,3 +1,6 @@
+@import "../animations/_animations";
+@import "../util/_colors";
+
 .yt__header_section {
   align-items: center;
   display: flex;
@@ -16,17 +19,17 @@
     width: 100%;
 
     &:after {
-      background-image: linear-gradient(180deg, transparent, #324a40 300px);
+      background-image: linear-gradient(180deg, transparent, $color-indigo 300px);
       content: "";
       height: 95vmax;
       left: 0;
       position: absolute;
       right: 0;
-      top: calc(70vmax - 300px);
+      top: calc(70vmax - 400px);
     }
 
     .yt__hero_image {
-      animation: header__animation .8s ease-out both;
+      animation: reveal__animation .8s ease-out both;
       display: block;
       overflow: hidden;
       position: absolute;
@@ -52,20 +55,20 @@
       }
 
       .img__hero2 {
-        animation: 18s g linear infinite;
-        background: url(../assets/images/aerial.jpg) no-repeat 50% 50%;
+        animation: 18s hero__2_animation linear infinite;
+        background: url(./../assets/images/aerial.jpg) no-repeat 50% 50%;
         background-size: cover;
       }
 
       .img__hero3 {
-        animation: 18s h linear 6s infinite;
-        background: url(../assets/images/island.jpg) no-repeat 50% 50%;
+        animation: 18s hero__3_animation linear 6s infinite;
+        background: url(./../assets/images/island.jpg) no-repeat 50% 50%;
         background-size: cover
       }
 
       .img__hero1 {
-        animation: 18s i linear 12s infinite;
-        background: url(../assets/images/louvre.jpg) no-repeat 50% 50%;
+        animation: 18s hero__1_animation linear 12s infinite;
+        background: url(./../assets/images/louvre.jpg) no-repeat 50% 50%;
         background-size: cover;
       }
     }
@@ -101,39 +104,67 @@
       }
     }
   }
-}
 
-@keyframes header__animation {
-  0% { opacity: 0 }
-  100% { opacity: 1 }
-}
+  .yt__header_form {
+    bottom: 30px;
+    height: auto;
+    left: 0;
+    padding: 0 1.5rem;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 10;
 
-@keyframes g {
-  0%  { opacity: 0; transform: translate3d(5vmax, 2vmax, 0) scale(1.1) }
-  5%  { opacity: 1 }
-  33% { opacity: 1 }
-  38% { opacity: 0; transform: translate3d(0, -2vmax, 0) scale(1) }
-}
+    .yt__header_form-container {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
-@keyframes h {
-  0%  { opacity: 0; transform: translate3d(-2vmax, 0, 0) scale(1) }
-  5%  { opacity: 1 }
-  33% { opacity: 1 }
-  38% { opacity: 0; transform: translate3d(2vmax, -2vmax, 0) scale(1.1) }
-}
+      h1 {
+        animation: reveal__animation 0.4s 0.2s ease-in-out both;
+        color: $color-white;
+        font-size: 3.75rem;
+        font-weight: 700;
+        letter-spacing: normal;
+        line-height: 1;
+        margin-bottom: 1.5rem;
+      }
 
-@keyframes i {
-  0%  { opacity: 0; transform: translate3d(0, 2vmax, 0) scale(1) }
-  5%  { opacity: 1 }
-  33% { opacity: 1 }
-  38% { opacity: 0; transform: translateY(-2vmax) scale(1.1) }
+      h2 {
+        animation: reveal__animation 0.4s 0.25s ease-in-out both;
+        color: $color-white;
+        display: none;
+        font-size: 1.5rem;
+        font-style: italic;
+        font-weight: 500;
+        letter-spacing: normal;
+        margin-bottom: 3rem;
+      }
+
+      input {
+        margin-bottom: 1.5rem;
+        width: 100%;
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) {
   .yt__header_section {
-    .yt__header_hero {
-      &:after {
-        display: none;
+    .yt__header_form {
+      .yt__header_form-container {
+        h1 {
+          font-size: 4.6rem;
+          font-weight: 700;
+        }
+        h2 {
+          display: block;
+        }
+        input {
+          max-width: 500px;
+          width: 70%;
+        }
       }
     }
     .yt__header_navigation {
