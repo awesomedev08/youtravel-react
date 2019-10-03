@@ -1,0 +1,19 @@
+@import "_colors";
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  grid-area: main;
+  justify-content: center;
+  padding: 1rem;
+}
+
+
+@media (min-width: 768px) {
+  main {
+    section {
+
+    }
+  }
+}
