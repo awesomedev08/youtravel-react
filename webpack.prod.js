@@ -42,6 +42,15 @@ module.exports = {
             },
           },
         ],
+      }, {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [{
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'assets/images',
+          },
+          loader: 'file-loader',
+        }],
       },
     ],
   },
@@ -73,12 +82,6 @@ module.exports = {
       // Enable caching and optionally specify the path to store cached data
       // Note: disabling caching may increase build times considerably
       cache: true,
-      // Override the publicPath option usually read from webpack configuration
-      publicPath: './',
-      // The directory to output the assets relative to the webpack output dir.
-      // Relative string paths are allowed here ie '../public/static'. If this
-      // option is not set, `prefix` is used.
-      outputPath: './',
       // Prefix path for generated assets
       prefix: 'assets/favicon',
       // Inject html links/metadata (requires html-webpack-plugin).

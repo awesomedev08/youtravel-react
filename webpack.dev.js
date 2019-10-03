@@ -9,7 +9,7 @@ module.exports = {
   entry: path.join(__dirname, 'src', 'client', 'index.js'),
   mode: 'development',
   devtool: 'source-map',
-  stats: 'none',
+  stats: 'verbose',
   output: {
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].bundle.js',
@@ -46,6 +46,15 @@ module.exports = {
             },
           },
         ],
+      }, {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [{
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'assets/images',
+          },
+          loader: 'file-loader',
+        }],
       },
     ],
   },
