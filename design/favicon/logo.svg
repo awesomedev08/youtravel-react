@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <g fill="none" fill-rule="evenodd">
+    <circle cx="256" cy="256" r="256" fill="#FFF"/>
+    <text fill="#DC7300" font-family="EmblemaOne-Regular, Emblema One" font-size="290">
+      <tspan x="53" y="360">YT</tspan>
+    </text>
+  </g>
+</svg>
