@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="156" height="28" viewBox="0 0 156 28">
+  <defs>
+    <linearGradient id="positive-a" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#EFA900"/>
+      <stop offset="100%" stop-color="#DB7000"/>
+    </linearGradient>
+    <linearGradient id="positive-b" x1="50%" x2="50%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5BD02"/>
+      <stop offset="100%" stop-color="#E78801"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path fill="url(#positive-a)" d="M0,0 C78,0 78,0 147.617407,0 C152.000903,7.3359375 154.795101,12.0026042 156,14 C155.100403,15.8154297 152.306205,20.4820964 147.617407,28 C101.078271,28 54.5391355,28 8,28 C3.581722,28 5.41083001e-16,24.418278 0,20 C0,13.3333333 0,6.66666667 0,0 Z"/>
+    <text fill="#FFF" font-family="EmblemaOne-Regular, Emblema One" font-size="21">
+      <tspan x="6" y="21">YouTravel</tspan>
+    </text>
+    <polygon fill="url(#positive-b)" points="144 0 147.88 0 156.035 14 147.88 28 144 28 152.068 14"/>
+    <polygon fill="url(#positive-b)" points="138 0 141.88 0 150.035 14 141.88 28 138 28 146.068 14"/>
+    <polygon fill="url(#positive-b)" points="132 0 135.88 0 144.035 14 135.88 28 132 28 140.068 14"/>
+  </g>
+</svg>
