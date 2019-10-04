@@ -15,9 +15,6 @@ module.exports = {
     chunkFilename: '[name].[chunkhash].bundle.js',
     path: path.join(__dirname, 'dist'),
   },
-  devServer: {
-    writeToDisk: true,
-  },
   module: {
     rules: [
       {
