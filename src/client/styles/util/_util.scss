@@ -1,3 +1,11 @@
 .yt__hidden {
   display: none;
 }
+
+.yt__visible {
+  visibility: visible !important;
+}
+
+.yt__invisible {
+  visibility: hidden !important;
+}

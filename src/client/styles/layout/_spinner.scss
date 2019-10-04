@@ -1,0 +1,55 @@
+@import "../animations/_spinner";
+@import "../util/_colors";
+
+.yt__spinner {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  left: 0;
+  overflow: visible;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 999;
+
+  /* Transparent Overlay */
+  &:before {
+    background: $background-teal;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.9;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  /* :not(:required) hides these rules from IE9 and below */
+  &:not(:required) {
+    /* hide "loading..." text */
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+  }
+
+  &:not(:required):after {
+    animation: spinner__animation 1s linear 0s infinite;
+    border: 5px solid $color-yellow;
+    border-bottom-color: transparent;
+    border-radius: 100%;
+    content: '';
+    display: block;
+    font-size: 10px;
+    height: 50px;
+    margin-top: -0.5em;
+    width: 50px;
+  }
+}

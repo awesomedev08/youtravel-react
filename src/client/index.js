@@ -1,3 +1,4 @@
+import {toggleSpinner} from './js/spinnerHandler';
 import './styles/index.scss';
 
 const _initServiceWorker = () => {
@@ -18,4 +19,7 @@ _initServiceWorker();
 // HTML document has been completely loaded and parsed
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Document Loaded');
+  toggleSpinner(true);
+
+  setTimeout(() => toggleSpinner(false), 3000);
 });
