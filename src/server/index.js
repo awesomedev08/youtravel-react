@@ -5,6 +5,7 @@ import express from 'express';
 import mockAPIResponse from './mockAPI';
 import path from 'path';
 
+import {fetchDarkSkyData} from './dark_sky_api';
 import {fetchGEOData} from './geo_api';
 
 dotenv.config();
@@ -31,9 +32,29 @@ app.get('/test', (req, res) => {
 
 app.get('/geoname', (req, res) => {
   const name = req.query.name;
-  fetchGEOData(name).then((response) => {
-    if (response.success) {
-      res.json({success: true, data: response.data});
+  fetchGEOData(name).then((geoResponse) => {
+    if (geoResponse.success) {
+      const {lat, lng} = geoResponse.data;
+      const date = new Date().getTime();
+      fetchDarkSkyData(date, lat, lng).then((skyResponse) => {
+        if (skyResponse.success) {
+          res.json({
+            success: true,
+            data: {
+              geo: geoResponse.data,
+              sky: skyResponse.data,
+            },
+          });
+        } else {
+          res.json({
+            success: false,
+            data: {
+              geo: geoResponse.data,
+              sky: skyResponse.message,
+            },
+          });
+        }
+      });
     } else {
       res.json({success: false, message: response.message});
     }

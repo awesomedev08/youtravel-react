@@ -4,7 +4,7 @@ import request from 'request';
  * Function that calls GeoNames Search Webservice to resolve a location name
  *
  * @param {String} dest - Destination name for which we want GEO data.
- * @return {JSON} representing current weather info specific to our zip code.
+ * @return {JSON} representing geo data specific to our destination name.
  */
 const fetchGEOData = async (dest) => {
   // we build our data necessary for doing the fetch operation from GeoNames api
