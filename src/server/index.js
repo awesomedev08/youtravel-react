@@ -1,10 +1,13 @@
-require('dotenv').config();
+import bodyParser from 'body-parser';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import express from 'express';
+import mockAPIResponse from './mockAPI';
+import path from 'path';
 
-const path = require('path');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const express = require('express');
-const mockAPIResponse = require('./mockAPI.js');
+import {fetchGEOData} from './geo_api';
+
+dotenv.config();
 
 // Start up an instance of app
 const app = express();
@@ -24,6 +27,17 @@ app.get('/test', (req, res) => {
   // number of spaces for indentation
   app.set('json spaces', 2);
   res.json(mockAPIResponse);
+});
+
+app.get('/geoname', (req, res) => {
+  const name = req.query.name;
+  fetchGEOData(name).then((response) => {
+    if (response.success) {
+      res.json({success: true, data: response.data});
+    } else {
+      res.json({success: false, message: response.message});
+    }
+  });
 });
 
 app.get('/', (req, res) => {
