@@ -1,3 +1,4 @@
+import {initializeDatePickers} from './js/datesHandler';
 import {toggleSpinner} from './js/spinnerHandler';
 import './styles/index.scss';
 
@@ -19,7 +20,9 @@ _initServiceWorker();
 // HTML document has been completely loaded and parsed
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Document Loaded');
-  toggleSpinner(true);
+  initializeDatePickers();
 
-  setTimeout(() => toggleSpinner(false), 3000);
+  // toggleSpinner(true);
+
+  // setTimeout(() => toggleSpinner(false), 3000);
 });

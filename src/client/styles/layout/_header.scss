@@ -143,8 +143,35 @@
       }
 
       input {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         width: 100%;
+      }
+
+      .search__container {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 1.5rem;
+        margin-top: 0.5rem;
+        width: 100%;
+
+        label {
+          color: $color-white;
+          cursor: pointer;
+          font-size: 1rem;
+          font-weight: 600;
+          line-height: 1.125rem;
+          margin-right: 5rem;
+          opacity: 0.5;
+        }
+
+        svg {
+          margin-right: 0.3rem;
+          opacity: 0.5;
+
+          path {
+            fill: $color-white;
+          }
+        }
       }
     }
   }
@@ -162,6 +189,10 @@
           display: block;
         }
         input {
+          max-width: 500px;
+          width: 70%;
+        }
+        .search__container {
           max-width: 500px;
           width: 70%;
         }
