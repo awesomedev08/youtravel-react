@@ -19,10 +19,10 @@ const fetchGEOData = async (dest) => {
         }));
       } else {
         if (data && data.geonames && data.geonames[0]) {
-          const {lat, lng} = data.geonames[0];
+          const {countryCode, countryName, lat, lng} = data.geonames[0];
           resolve({
             success: true,
-            data: {lat, lng},
+            data: {countryCode, countryName, lat, lng},
           });
         } else {
           resolve({

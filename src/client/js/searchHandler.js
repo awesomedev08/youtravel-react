@@ -18,16 +18,16 @@ const _searchAdventure = async (name) => {
         }));
       }
 
-      response.json().then((data) => {
-        if (data.success) {
+      response.json().then((resData) => {
+        if (resData.success) {
           resolve({
             success: true,
-            data: data,
+            data: resData.data,
           });
         } else {
           resolve({
             success: false,
-            data: data,
+            data: resData.data,
           });
         }
       });
