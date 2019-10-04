@@ -7,7 +7,7 @@
   </head>
   <body>
     <header class="yt__header_section" role="banner">
-      <section class="yt__header_navigation">
+      <section class="yt__header_navigation" id="yt__header_navigation">
         <nav role="navigation">
           <svg xmlns="http://www.w3.org/2000/svg" width="159" height="30">
             <g fill="none" fill-rule="evenodd">
@@ -22,7 +22,7 @@
           </svg>
         </nav>
       </section>
-      <section class="yt__header_hero">
+      <section class="yt__header_hero" id="yt__header_hero">
         <div class="yt__hero_image">
           <img alt="Aerial View Winding Road & Ocean" class="img__hero2" src="../assets/images/aerial.jpg" />
         </div>
@@ -38,7 +38,7 @@
           <img alt="Louvre Pyramid Paris" class="img__hero1" src="../assets/images/louvre.jpg" />
         </div>
       </section>
-      <section class="yt__header_form">
+      <section class="yt__header_form" id="yt__header_form">
         <div class="yt__header_form-container">
           <h1>Adventures made easy</h1>
           <h2>Find an adventure, travel plans and experiences.</h2>
@@ -64,7 +64,55 @@
       </section>
     </header>
     <main role="main">
-      <section></section>
+      <section class="yt__result_section" id="yt__result_section">
+        <div class="yt__result_container">
+          <img alt="Your Adventure Picture" id="yt__result_picture" src="https://via.placeholder.com/300/09f/fff.png" />
+          <div class="yt__result_info">
+            <div class="yt__result_header">
+              <h1>Adventure destination: </h1>
+              <h1 id="yt__results_destination">nbsp;</h1>
+            </div>
+            <table>
+              <tr>
+                <td>
+                  <h2>Departure Date: </h2>
+                </td>
+                <td>
+                  <i id="yt__results_departure">&nbsp;</i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h2>Return Date: </h2>
+                </td>
+                <td>
+                  <i id="yt__results_return">&nbsp;</i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h2>Days until departure: </h2>
+                </td>
+                <td>
+                  <i id="yt__results_days_until">&nbsp;</i>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h2>Total Adventure days: </h2>
+                </td>
+                <td>
+                  <i id="yt__results_total_days">&nbsp;</i>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="yt__result_weather" >
+          <script id="yt__result_weather" type='text/javascript' src='https://darksky.net/widget/default/42.360082,-71.05888/us12/en.js?width=100%&height=350&title=Weather Information&textColor=333333&bgColor=FFFFFF&transparency=false&skyColor=undefined&fontFamily=Default&customFont=&units=us&htColor=333333&ltColor=C7C7C7&displaySum=yes&displayHeader=yes'></script>
+        </div>
+        <button id="yt__back_button" type="button">Back to Search</button>
+      </section>
     </main>
     <footer role="contentinfo">
       <div class="yt-footer-copyright">

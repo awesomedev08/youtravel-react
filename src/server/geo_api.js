@@ -22,7 +22,7 @@ const fetchGEOData = async (dest) => {
           const {countryCode, countryName, lat, lng} = data.geonames[0];
           resolve({
             success: true,
-            data: {countryCode, countryName, lat, lng},
+            data: {destination: dest, countryCode, countryName, lat, lng},
           });
         } else {
           resolve({

@@ -43,7 +43,6 @@ const fetchDarkSkyData = async (date, lat, lng) => {
             message: 'There was a Dark Sky server error.',
           }));
         } else {
-          console.log(JSON.stringify(data));
           if (data) {
             resolve({
               success: true,
@@ -68,7 +67,6 @@ const fetchDarkSkyData = async (date, lat, lng) => {
             message: 'There was a Dark Sky server error.',
           }));
         } else {
-          console.log(JSON.stringify(data));
           if (data) {
             resolve({
               success: true,

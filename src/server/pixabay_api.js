@@ -24,7 +24,6 @@ const fetchPixaBayData = async (dest) => {
           message: 'There was a Pixabay server error.',
         }));
       } else {
-        console.log(JSON.stringify(data));
         if (data) {
           resolve({
             success: true,

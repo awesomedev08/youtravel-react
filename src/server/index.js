@@ -32,7 +32,7 @@ app.get('/test', (req, res) => {
 });
 
 app.get('/search', (req, res) => {
-  const {dDate, dest} = req.query;
+  const {dDate, dest, rDate} = req.query;
 
   fetchGEOData(dest).then((geoResponse) => {
     if (geoResponse.success) {
@@ -45,7 +45,11 @@ app.get('/search', (req, res) => {
               res.json({
                 success: true,
                 data: {
-                  geo: geoResponse.data,
+                  geo: {
+                    ...geoResponse.data,
+                    departureDate: dDate,
+                    returnDate: rDate,
+                  },
                   sky: skyResponse.data,
                   pix: pixResponse.data,
                 },

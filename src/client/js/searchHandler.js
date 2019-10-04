@@ -1,4 +1,5 @@
 import {getData} from './fetchUtil';
+import {showResults} from './resultsHandler';
 import {toggleSpinner} from './spinnerHandler';
 
 // our base url to server endpoints url's
@@ -81,6 +82,7 @@ searchButton.addEventListener('click', () => {
 
     _searchAdventure(destination, departureDate, returnDate).then((response) => {
       if (response.success) {
+        showResults(response.data);
         console.log(response);
       } else {
         console.log(response.message);
