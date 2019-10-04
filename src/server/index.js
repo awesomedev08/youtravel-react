@@ -7,6 +7,7 @@ import path from 'path';
 
 import {fetchDarkSkyData} from './dark_sky_api';
 import {fetchGEOData} from './geo_api';
+import {fetchPixaBayData} from './pixabay_api';
 
 dotenv.config();
 
@@ -30,33 +31,56 @@ app.get('/test', (req, res) => {
   res.json(mockAPIResponse);
 });
 
-app.get('/geoname', (req, res) => {
-  const name = req.query.name;
-  fetchGEOData(name).then((geoResponse) => {
+app.get('/search', (req, res) => {
+  const {dDate, dest} = req.query;
+
+  fetchGEOData(dest).then((geoResponse) => {
     if (geoResponse.success) {
       const {lat, lng} = geoResponse.data;
-      const date = new Date().getTime();
+      const date = new Date(dDate).getTime();
       fetchDarkSkyData(date, lat, lng).then((skyResponse) => {
         if (skyResponse.success) {
-          res.json({
-            success: true,
-            data: {
-              geo: geoResponse.data,
-              sky: skyResponse.data,
-            },
+          fetchPixaBayData(dest).then((pixResponse) => {
+            if (pixResponse.success) {
+              res.json({
+                success: true,
+                data: {
+                  geo: geoResponse.data,
+                  sky: skyResponse.data,
+                  pix: pixResponse.data,
+                },
+              });
+            } else {
+              res.json({
+                success: false,
+                data: {
+                  geo: geoResponse.data,
+                  sky: skyResponse.message,
+                  pix: null,
+                },
+              });
+            }
           });
         } else {
           res.json({
             success: false,
             data: {
               geo: geoResponse.data,
-              sky: skyResponse.message,
+              sky: null,
+              pix: null,
             },
           });
         }
       });
     } else {
-      res.json({success: false, message: response.message});
+      res.json({
+        success: false,
+        data: {
+          geo: null,
+          sky: null,
+          pix: null,
+        },
+      });
     }
   });
 });

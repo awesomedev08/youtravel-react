@@ -47,7 +47,7 @@ const fetchDarkSkyData = async (date, lat, lng) => {
           if (data) {
             resolve({
               success: true,
-              data: null,
+              data: data,
             });
           } else {
             resolve({
