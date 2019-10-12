@@ -13,7 +13,7 @@
   .yt__header_hero {
     box-sizing: border-box;
     display: block;
-    height: 90vmax;
+    height: 100%;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -25,7 +25,7 @@
       left: 0;
       position: absolute;
       right: 0;
-      top: calc(90vmax - 400px);
+      top: calc(70vmax - 400px);
     }
 
     .yt__hero_image {
@@ -192,12 +192,6 @@
 
 @media (min-width: 640px) {
   .yt__header_section {
-    .yt__header_hero {
-      height: 70vmax;
-      &:after {
-        top: calc(70vmax - 400px);
-      }
-    }
     .yt__header_form {
       .yt__header_form-container {
         .yt__search_container {
