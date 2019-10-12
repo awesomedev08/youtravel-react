@@ -101,3 +101,5 @@ app.listen(port, () => {
   // Callback to debug
   console.log(`Server listening on port: ${port}`);
 });
+
+module.exports = app;
